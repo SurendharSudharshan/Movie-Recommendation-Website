@@ -1,0 +1,11 @@
+fetched_urls.csv
+final_movies.csv
+final_ratings.csv
+using_premodel.ipynb
+with_collaborative_filtering.ipynb
+finalized_model.sav
+Website/final_movies.csv
+Website/final_ratings.csv
+Website/index.py
+Website/train_model.py
+

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>MoRe</title>
+    
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<!-- Header -->
+	<header id="home">
+		<!-- Background Image -->
+		<div class="bg-img" style="background-image: url('{{ url_for('static', filename='images/background1.jpg') }}');">
+			<div class="overlay"></div>
+		</div>
+		<!-- /Background Image -->
+
+		<!-- Nav -->
+		<nav id="nav" class="navbar nav-transparent">
+			<div class="container">
+
+				<div class="navbar-header">
+					<!-- Logo -->
+					<div class="navbar-brand">
+						<a href="index.html">
+                            <p style="color: white;margin-top: 10%;margin-left: -35%;">A <strong>Vasu Gupta</strong> Project</p>
+						</a>
+					</div>
+					<!-- /Logo -->
+
+					<!-- Collapse nav button -->
+					<div class="nav-collapse">
+						<span></span>
+					</div>
+					<!-- /Collapse nav button -->
+				</div>
+
+				<!--  Main navigation  -->
+				<ul class="main-nav nav navbar-nav navbar-right">
+					<li><a href="#home">Home</a></li>
+				</ul>
+				<!-- /Main navigation -->
+
+			</div>
+		</nav>
+		<!-- /Nav -->
+
+		<!-- home wrapper -->
+		<div class="home-wrapper">
+			<div class="container">
+				<div class="row">
+
+					<!-- home content -->
+					<div class="col-md-10 col-md-offset-1">
+						<div class="home-content">
+							<h1 class="white-text">A Movie Recommendation Platform</h1>
+							<p class="white-text">Just choose any user from our database and you will get movie suggestions from that taste!! As Simple as That!
+							</p>
+							<button onclick="location.href='https://github.com/Vasu7052/Movie-Recommendation-Website'" class="white-btn">Github</button>
+							<button onclick="location.href='#service'" class="main-btn">Get Started!</button>
+						</div>
+					</div>
+					<!-- /home content -->
+
+				</div>
+			</div>
+		</div>
+		<!-- /home wrapper -->
+
+	</header>
+	<!-- /Header -->
+
+	<!-- Service -->
+                    <div id="service" class="section md-padding">
+                        <!-- Container -->
+                        <div class="container">
+
+                            <!-- Row -->
+                            <div class="row">
+
+                                <!-- Section header -->
+                                <div class="section-header text-center">
+                                    <h2 class="title">Choose Any User</h2>
+                                </div>
+                                <!-- /Section header -->
+
+								{% for item in users_list %}
+                                <!-- service -->
+                                <div class="col-md-3 col-sm-6" onclick="open_main({{ item[0] }})">
+                                    <div class="service">
+                                        <i class="fa fa-diamond"></i>
+                                        <h4 style="white-space: nowrap;">{{ item[1] }}</h4>
+                                        <p>Rated {{ item[2] }} Movies</p>
+                                    </div>
+                                </div>
+                                <!-- /service -->
+
+								{% endfor %}
+
+                            </div>
+                            <!-- /Row -->
+
+                        </div>
+                        <!-- /Container -->
+
+                    </div>
+                    <!-- /Service -->
+
+	<script>
+		function open_main(i) {
+			console.log("" + i) ;
+			window.open("http://127.0.0.1:5000/main?user_id="+i);
+		}
+	</script>
+
+	<!-- jQuery Plugins -->
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+</body>
+
+</html>

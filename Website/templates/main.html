@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>MoRe</title>
+    
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<!-- Portfolio -->
+	<div id="portfolio" style="margin-top: 20px;" class="section">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div style="margin: 0px;" class="section-header text-center">
+					<h2 class="title">Movies Rated By You!</h2>
+				</div>
+				<!-- /Section header -->
+
+				{% for item in movie_list %}
+				<!-- Work -->
+				<div class="col-md-3 col-xs-6 work">
+					<img class="img-responsive" src="{{ item[3] }}" alt="">
+					<div class="overlay"></div>
+					<div class="work-content">
+						<span>{{ item[0] }}</span>
+						<h3>Rating : {{ item[1] }}</h3>
+                        <span>{{ item[2] }}</span>
+					</div>
+				</div>
+				<!-- /Work -->
+				{% endfor %}
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<!-- /Portfolio -->
+
+    <!-- Portfolio -->
+	<div id="portfolio" style="margin-top: 20px;" class="section">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div style="margin: 0px;" class="section-header text-center">
+					<h2 class="title">Movies Recommended to You!</h2>
+				</div>
+				<!-- /Section header -->
+
+				{% for item in recommend_list %}
+				<!-- Work -->
+				<div class="col-md-3 col-xs-6 work">
+					<img class="img-responsive" src="{{ item[2] }}" alt="">
+					<div class="overlay"></div>
+					<div class="work-content">
+						<span>{{ item[0] }}</span>
+                        <span>{{ item[1] }}</span>
+					</div>
+				</div>
+				<!-- /Work -->
+				{% endfor %}
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<!-- /Portfolio -->
+
+	<script>
+		function open_main(i) {
+			console.log("" + i) ;
+			window.open("http://127.0.0.1:5000/main?user_id="+i);
+		}
+	</script>
+
+	<!-- jQuery Plugins -->
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+</body>
+
+</html>
