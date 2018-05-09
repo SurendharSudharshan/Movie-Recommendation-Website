@@ -15,10 +15,13 @@ This model is trained on 1000 users and 2000 movies. Each user has rated atleast
 
 ### Home Page
 <img src="https://github.com/Vasu7052/Movie-Recommendation-Website/blob/master/Screenshots/ss1.png">
+
 ### List of already present users
 <img src="https://github.com/Vasu7052/Movie-Recommendation-Website/blob/master/Screenshots/ss2.png">
+
 ### List of movies rated by that user
 <img src="https://github.com/Vasu7052/Movie-Recommendation-Website/blob/master/Screenshots/ss3.png">
+
 ### List of movies recommended to that user
 <img src="https://github.com/Vasu7052/Movie-Recommendation-Website/blob/master/Screenshots/ss4.png">
 
