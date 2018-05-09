@@ -3,7 +3,7 @@ This is a website that uses Machine Learning to recommend certain movies to a us
 
 Project is live on http://movierecommend.pythonanywhere.com/
 
-## Workings
+## Working
 
 This model uses both the approaches for recommendations systems that are :
 * Collaborative Filtering
