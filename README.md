@@ -1,7 +1,7 @@
 # Movie Recommendation Website
 This is a website that uses Machine Learning to recommend certain movies to a user.
 
-Project is live on <a href="http://movierecommend.pythonanywhere.com/" target="_blank" >
+Project is live on http://movierecommend.pythonanywhere.com/
 
 ## Workings
 
